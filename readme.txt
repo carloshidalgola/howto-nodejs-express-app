@@ -35,3 +35,29 @@ https://lit-mesa-83065.herokuapp.com/api/v1/products //el app listo :)
 
 
 
+//Docker installation
+https://platzi.com/clases/2282-nestjs-typeorm/37289-configuracion-de-postgres-en-docker/
+https://platzi.com/tutoriales/2507-backend-nodejs-postgres/12355-activar-hyper-v-en-windows-home-para-docker/
+
+//Docker commands
+//enel directorio raiz del proyecto
+docker-compose up -d postgres //crea un contenedor de postgres
+docker-compose up -d pgadmin
+docker-compose ps //lista los contenedores activos
+docker-compose down //detiene el servicio
+docker-compose up //levanta el servicio
+
+docker ps //muestra ID del contenedor
+docker inspect 01489e150def //detalle del contenedor por ID
+
+
+//Levantar pgadmin
+http://localhost:5050/login?next=%2F
+
+
+//Conectar Node con Postgress
+https://node-postgres.com/
+
+
+//Instalar libreria para leer archivo .env
+npm i dotenv

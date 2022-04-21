@@ -1,32 +1,15 @@
 const express = require('express');
-const faker = require('faker');
+
+const UserService = require('./../services/user-service');
+//const validatorHandler = require('./../middlewares/validator-handler');
+//const { createProductSchema, updateProductSchema, getProductSchema } = require('./../schemas/product-dto');
 
 const router = express.Router();
+const service = new UserService();
 
-router.get('/', (req, res)=> {
-  // const { limit, offset } = req.query;
-  // if(limit && offset){
-  //   res.json({
-  //     limit,
-  //     offset
-  //   });
-  // } else
-  // {
-  //   res.send('no hay parametros');
-  // }
-  res.json(getUsers(10));
+router.get('/', async (req, res) => {
+  const users = await service.find();
+  res.json(users);
 });
-
-const getUsers =  function (limit){
-  const users = [];
-  for (let index = 0; index < limit; index++) {
-    users.push({
-      name: faker.name.findName(),
-      email: faker.internet.email()
-    });
-  }
-
-  return users;
-}
 
 module.exports = router;
