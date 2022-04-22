@@ -61,3 +61,14 @@ https://node-postgres.com/
 
 //Instalar libreria para leer archivo .env
 npm i dotenv
+
+
+//*****************************************
+//ORM -https://sequelize.org/
+//Instalar SEQUALIZE
+npm install sequelize sqlite3
+
+//******************************
+//MYSQL Docker
+docker-compose up -d mysql
+docker-compose ps
