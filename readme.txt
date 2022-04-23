@@ -62,6 +62,8 @@ https://node-postgres.com/
 //Instalar libreria para leer archivo .env
 npm i dotenv
 
+//instalar npm mysql
+npm install --save mysql
 
 //*****************************************
 //ORM -https://sequelize.org/
@@ -72,3 +74,9 @@ npm install sequelize sqlite3
 //MYSQL Docker
 docker-compose up -d mysql
 docker-compose ps
+
+
+//***************
+//Si sale error al levantar MYSQL es xq el puerto ya esta siendo usado
+netstat -ano -p tcp |find "3306"  //ver puertos
+npx kill-port 3306
