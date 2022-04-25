@@ -41,7 +41,7 @@ https://platzi.com/tutoriales/2507-backend-nodejs-postgres/12355-activar-hyper-v
 
 //Docker commands
 //enel directorio raiz del proyecto
-docker-compose up -d postgres //crea un contenedor de postgres
+docker-compose up -d postgres //activa un contenedor de postgres
 docker-compose up -d pgadmin
 docker-compose ps //lista los contenedores activos
 docker-compose down //detiene el servicio
@@ -80,3 +80,13 @@ docker-compose ps
 //Si sale error al levantar MYSQL es xq el puerto ya esta siendo usado
 netstat -ano -p tcp |find "3306"  //ver puertos
 npx kill-port 3306
+
+
+//****************************************
+//Migraciones
+npm i sequelize-cli --save-dev
+//crea una plantilla que permita generar migraciones db/migrations/20220423180608-create-users
+npm run migrations:generate create-users
+npm run migrations:generate add-role
+//Ejecuta los scripts de migración :D
+npm run migrations:run
